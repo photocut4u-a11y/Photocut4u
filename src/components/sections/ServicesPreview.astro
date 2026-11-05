@@ -1,0 +1,159 @@
+---
+import { Camera, Video, Heart, Users, Building2, Church, Baby, Sparkles, ArrowRight, Check } from 'lucide-react';
+
+const services = [
+  {
+    id: 'weddings',
+    title: 'Weddings & Engagements',
+    icon: Heart,
+    description: 'Full-day coverage from prep to last dance. Cinematic highlight films + complete photo galleries.',
+    features: ['8-12 hours coverage', '2 photographers', 'Highlight film (3-5 min)', 'Full gallery (500+ images)', 'Online delivery', 'USB keepsake box'],
+    price: 'From £1,850',
+    popular: true,
+  },
+  {
+    id: 'events',
+    title: 'Events & Parties',
+    icon: Sparkles,
+    description: 'Birthdays, anniversaries, corporate parties, milestone celebrations. Candid + posed coverage.',
+    features: ['4-8 hours coverage', 'Event highlight reel', 'All edited images', 'Same-day sneak peek', 'Group & candid shots', 'Print release'],
+    price: 'From £550',
+    popular: false,
+  },
+  {
+    id: 'portraits',
+    title: 'Portraits & Family',
+    icon: Users,
+    description: 'Studio or on-location sessions for families, couples, maternity, newborns, and personal branding.',
+    features: ['1-2 hour session', 'Multiple locations', 'Outfit changes welcome', '30+ edited images', 'Online gallery', 'Print products available'],
+    price: 'From £295',
+    popular: false,
+  },
+  {
+    id: 'corporate',
+    title: 'Corporate & Commercial',
+    icon: Building2,
+    description: 'Headshots, team photos, event coverage, brand content, real estate, and marketing videos.',
+    features: ['Half/full day rates', 'Professional headshots', 'Event documentation', 'Brand video content', 'Quick turnaround', 'Commercial license'],
+    price: 'From £450',
+    popular: false,
+  },
+  {
+    id: 'church',
+    title: 'Church & Worship',
+    icon: Church,
+    description: 'Worship nights, conferences, baptisms, church events. Respectful, unobtrusive coverage.',
+    features: ['Multi-camera video', 'Live streaming support', 'Audio recording', 'Photo + video packages', 'Fast delivery', 'Ministry discounts'],
+    price: 'From £350',
+    popular: false,
+  },
+  {
+    id: 'baby',
+    title: 'Newborn & Baby',
+    icon: Baby,
+    description: 'Lifestyle newborn sessions, milestone sessions (3/6/9/12 months), cake smash, family.',
+    features: ['2-3 hour session', 'Baby-led pacing', 'Props & outfits provided', 'Sibling/family shots', '25+ edited images', 'Heirloom albums'],
+    price: 'From £325',
+    popular: false,
+  },
+];
+---
+
+<section id="services" class="section bg-slate-50" aria-labelledby="services-heading">
+  <div class="container-custom">
+    <div class="text-center mb-16">
+      <h2 id="services-heading" class="section-title">Our Services</h2>
+      <p class="section-subtitle mx-auto">
+        Tailored packages for every occasion. All prices include editing, online delivery, and print release.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <article class="card relative overflow-hidden group">
+          {service.popular && (
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+              <span class="bg-amber-500 text-white text-xs font-bold px-4 py-1 rounded-full shadow-lg">
+                Most Popular
+              </span>
+            </div>
+          )}
+          <div class="p-8 relative">
+            <!-- Icon -->
+            <div class="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center mb-6 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+              <service.icon class="w-8 h-8 text-slate-900 group-hover:text-white transition-colors duration-300" aria-hidden="true" />
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+            <p class="text-slate-600 mb-6">{service.description}</p>
+
+            <div class="space-y-3 mb-8">
+              {service.features.map((feature) => (
+                <div class="flex items-start gap-3 text-sm text-slate-600">
+                  <Check class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>{feature}</span>
+                </div>
+              ))}
+            </div>
+
+            <div class="flex items-baseline justify-between gap-4 pt-6 border-t border-slate-100">
+              <div>
+                <span class="text-3xl font-bold text-slate-900">{service.price}</span>
+                <span class="text-slate-500 ml-1">+ VAT</span>
+              </div>
+              <a
+                href={`/contact?service=${service.id}`}
+                class="btn-primary text-sm px-5 py-2 group"
+              >
+                Enquire
+                <ArrowRight class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Add-ons -->
+    <div class="mt-16 p-8 bg-white rounded-2xl border border-slate-100">
+      <h3 class="text-2xl font-bold text-slate-900 mb-6 text-center">Popular Add-ons</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+        <div class="p-6 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors">
+          <div class="w-14 h-14 rounded-xl bg-slate-900 flex items-center justify-center mx-auto mb-4">
+            <Camera class="w-7 h-7 text-white" aria-hidden="true" />
+          </div>
+          <h4 class="font-semibold text-slate-900 mb-2">Second Shooter</h4>
+          <p class="text-slate-600 text-sm">+£350/day</p>
+        </div>
+        <div class="p-6 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors">
+          <div class="w-14 h-14 rounded-xl bg-slate-900 flex items-center justify-center mx-auto mb-4">
+            <Video class="w-7 h-7 text-white" aria-hidden="true" />
+          </div>
+          <h4 class="font-semibold text-slate-900 mb-2">Full Feature Film</h4>
+          <p class="text-slate-600 text-sm">+£650 (20-30 min)</p>
+        </div>
+        <div class="p-6 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors">
+          <div class="w-14 h-14 rounded-xl bg-slate-900 flex items-center justify-center mx-auto mb-4">
+            <Building2 class="w-7 h-7 text-white" aria-hidden="true" />
+          </div>
+          <h4 class="font-semibold text-slate-900 mb-2">Premium Album</h4>
+          <p class="text-slate-600 text-sm">From £295</p>
+        </div>
+        <div class="p-6 rounded-xl bg-slate-50 hover:bg-slate-100 transition-colors">
+          <div class="w-14 h-14 rounded-xl bg-slate-900 flex items-center justify-center mx-auto mb-4">
+            <Sparkles class="w-7 h-7 text-white" aria-hidden="true" />
+          </div>
+          <h4 class="font-semibold text-slate-900 mb-2">Drone Footage</h4>
+          <p class="text-slate-600 text-sm">+£150</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="/contact" class="btn-primary inline-flex items-center gap-2">
+        Get a Custom Quote
+        <ArrowRight class="w-5 h-5" aria-hidden="true" />
+      </a>
+    </div>
+  </div>
+</section>

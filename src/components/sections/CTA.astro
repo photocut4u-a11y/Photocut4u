@@ -1,0 +1,48 @@
+---
+import { ArrowRight, Camera, Video, Heart, Star, Shield, Truck } from 'lucide-react';
+---
+
+<section class="section bg-slate-900 relative overflow-hidden" aria-labelledby="cta-heading">
+  <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.03%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 36v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 6V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50" aria-hidden="true" />
+
+  <div class="relative container-custom">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 id="cta-heading" class="section-title text-white mb-6">
+        Ready to Capture Your Story?
+      </h2>
+      <p class="section-subtitle text-slate-300 mx-auto mb-10">
+        Let's chat about your vision. No pressure, no obligation — just a friendly conversation about what you need.
+      </p>
+
+      <!-- Dual CTA -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <a href="/contact" class="btn-primary text-lg px-8 py-4 group w-full sm:w-auto">
+          Get Your Free Quote
+          <ArrowRight class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+        </a>
+        <a href="tel:+447XXXYYYYYY" class="btn-secondary bg-transparent border-white text-white hover:bg-white/10 text-lg px-8 py-4 w-full sm:w-auto">
+          Call: +44 7XXX YYY YYY
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+        <div class="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+          <Shield class="w-10 h-10 text-amber-400 mx-auto mb-3" aria-hidden="true" />
+          <h4 class="font-semibold text-white mb-1">Fully Insured</h4>
+          <p class="text-slate-400 text-sm">Public liability & professional indemnity</p>
+        </div>
+        <div class="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+          <Truck class="w-10 h-10 text-amber-400 mx-auto mb-3" aria-hidden="true" />
+          <h4 class="font-semibold text-white mb-1">UK Wide Travel</h4>
+          <p class="text-slate-400 text-sm">No mileage fees within 50 miles of Slough</p>
+        </div>
+        <div class="p-6 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+          <Star class="w-10 h-10 text-amber-400 mx-auto mb-3" aria-hidden="true" />
+          <h4 class="font-semibold text-white mb-1">5-Star Reviews</h4>
+          <p class="text-slate-400 text-sm">On Google, Facebook & Trustpilot</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

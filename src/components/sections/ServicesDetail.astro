@@ -1,0 +1,332 @@
+---
+import { Camera, Video, Heart, Users, Building2, Church, Baby, Sparkles, ArrowRight, ChevronRight, Check, X, Camera as CameraIcon, Video as VideoIcon, Heart as HeartIcon, Users as UsersIcon, Building2 as Building2Icon, Church as ChurchIcon, Baby as BabyIcon } from 'lucide-react';
+
+const services = [
+  {
+    id: 'weddings',
+    title: 'Weddings & Engagements',
+    icon: HeartIcon,
+    description: 'Full-day coverage from morning prep to last dance. We capture every emotion, every detail, every stolen glance — then craft it into a cinematic story you\'ll watch on anniversaries for decades.',
+    longDescription: 'Your wedding day goes by in a blur. Our job is to freeze the moments you\'ll want to relive: the nervous laughter during prep, your partner\'s face as you walk down the aisle, the tears during speeches, the energy on the dance floor. We work as a seamless two-person team (photo + video) so nothing is missed, and you never feel like you\'re posing for a camera.',
+    features: [
+      '8-12 hours coverage',
+      '2-person team (photo + video)',
+      'Cinematic highlight film (3-5 min)',
+      'Full feature film option (20-30 min)',
+      '500+ edited photos in online gallery',
+      'Same-day sneak peek (5-10 images)',
+      'USB keepsake box with prints',
+      'Online gallery with download & sharing',
+      'Print release for personal use',
+      'Engagement session included',
+    ],
+    notIncluded: [
+      'Album design (available as add-on)',
+      'Second shooter for 3rd angle (add-on)',
+      'Drone footage (add-on, venue permitting)',
+      'Raw footage delivery',
+    ],
+    price: 'From £1,850',
+    popular: true,
+    addOns: [
+      { name: 'Second Shooter', price: '+£350/day' },
+      { name: 'Full Feature Film (20-30 min)', price: '+£650' },
+      { name: 'Premium Wedding Album (30 spreads)', price: 'From £295' },
+      { name: 'Drone Footage', price: '+£150' },
+      { name: 'Raw Footage Delivery', price: '+£200' },
+    ],
+  },
+  {
+    id: 'events',
+    title: 'Events & Parties',
+    icon: Sparkles,
+    description: 'Birthdays, anniversaries, charity galas, product launches, milestone celebrations. We document the atmosphere, the details, and the people who make your event special.',
+    longDescription: 'Whether it\'s an intimate 30th birthday dinner or a 200-guest corporate gala, we bring the same cinematic eye. We capture the venue before guests arrive, the details you spent months planning, the candid laughter, the speeches, the dancing — then deliver a highlight reel that lets you relive the night.',
+    features: [
+      '4-8 hours coverage',
+      'Event highlight reel (1-2 min)',
+      'All edited photos (200+ images)',
+      'Same-day sneak peek for social media',
+      'Group & candid coverage',
+      'Speeches & key moments recorded',
+      'Venue & detail shots',
+      'Online gallery with download',
+      'Print release included',
+    ],
+    notIncluded: [
+      'Live streaming (available as add-on)',
+      'Multi-camera setup (add-on)',
+      'Raw footage delivery',
+    ],
+    price: 'From £550',
+    popular: false,
+    addOns: [
+      { name: 'Live Streaming Setup', price: '+£300' },
+      { name: 'Second Shooter', price: '+£250/day' },
+      { name: 'Same-Day Edit (60 sec)', price: '+£200' },
+      { name: 'Drone Footage', price: '+£150' },
+    ],
+  },
+  {
+    id: 'portraits',
+    title: 'Portraits & Family',
+    icon: UsersIcon,
+    description: 'Studio or on-location sessions for families, couples, maternity, newborns, personal branding, and milestone portraits. Relaxed, natural, timeless.',
+    longDescription: 'The best portraits happen when you\'re comfortable. We start with a chat over coffee (or juice for the little ones), then let the session unfold naturally. Whether it\'s a golden-hour family walk in the park, a studio newborn session, or professional headshots for your team — we guide you with gentle direction, not stiff poses.',
+    features: [
+      '1-2 hour session',
+      'Studio or on-location (or both)',
+      'Multiple outfit changes welcome',
+      '30+ fully edited images',
+      'Online gallery with download',
+      'Print release for personal use',
+      'Sibling & family combinations',
+      'Pet-friendly sessions',
+    ],
+    notIncluded: [
+      'Heirloom albums (add-on)',
+      'Extended family groups 10+ (add-on)',
+      'Hair & makeup artist (referral available)',
+    ],
+    price: 'From £295',
+    popular: false,
+    addOns: [
+      { name: 'Premium Album (20 spreads)', price: 'From £195' },
+      { name: 'Extra Location', price: '+£100' },
+      { name: 'Extended Family (10+ people)', price: '+£150' },
+      { name: 'Canvas/Metal Prints', price: 'From £85' },
+    ],
+  },
+  {
+    id: 'corporate',
+    title: 'Corporate & Commercial',
+    icon: Building2Icon,
+    description: 'Professional headshots, team photography, event coverage, brand content, real estate, and marketing videos. Elevate your visual presence.',
+    longDescription: 'Your visual identity is often the first impression clients have. We create consistent, on-brand imagery for websites, LinkedIn, marketing materials, and press. From individual executive headshots to full-team sessions, conference coverage to brand story videos — we deliver professional results on your timeline.',
+    features: [
+      'Half/full day rates available',
+      'Professional headshots (individual & team)',
+      'Office environment & culture shots',
+      'Event & conference documentation',
+      'Brand video content (30-90 sec)',
+      'Real estate & architectural photography',
+      'Quick turnaround (48 hrs for headshots)',
+      'Commercial usage license included',
+      'Secure online delivery',
+    ],
+    notIncluded: [
+      'Model/talent casting (referral available)',
+      'Studio rental (if not on-location)',
+      'Extensive retouching beyond standard',
+    ],
+    price: 'From £450',
+    popular: false,
+    addOns: [
+      { name: 'Brand Story Video (60-90 sec)', price: '+£850' },
+      { name: 'Group Headshots (10+ people)', price: '+£200' },
+      { name: 'Annual Content Retainer', price: 'From £1,200/qtr' },
+      { name: 'Drone for Campus/Property', price: '+£150' },
+    ],
+  },
+  {
+    id: 'church',
+    title: 'Church & Worship',
+    icon: ChurchIcon,
+    description: 'Worship nights, conferences, baptisms, church events, and seasonal services. Respectful, unobtrusive coverage that honors the occasion.',
+    longDescription: 'We understand the sensitivity of faith events. Our team works quietly, without flash during services, and coordinates with your AV team for seamless coverage. From intimate baptisms to 500-person worship conferences — we capture the heart of your gathering.',
+    features: [
+      'Multi-camera video setup',
+      'Live streaming support & operation',
+      'Audio recording (board feed + ambient)',
+      'Photo + video packages',
+      'Fast delivery (48 hrs for social clips)',
+      'Ministry/organisation discounts',
+      'Respectful, no-flash approach',
+      'Coordination with your AV team',
+    ],
+    notIncluded: [
+      'Live stream platform fees',
+      'Multi-language captioning',
+      'Overnight editing',
+    ],
+    price: 'From £350',
+    popular: false,
+    addOns: [
+      { name: 'Live Stream Management', price: '+£200' },
+      { name: 'Full Service Recording', price: '+£300' },
+      { name: 'Weekly Social Clips', price: '+£150/mo' },
+    ],
+  },
+  {
+    id: 'baby',
+    title: 'Newborn & Baby Milestones',
+    icon: BabyIcon,
+    description: 'Lifestyle newborn sessions (1-14 days), milestone sessions (3/6/9/12 months), cake smash, and first birthday. Baby-led, stress-free.',
+    longDescription: 'Babies run the show. We work entirely at their pace — feeding, changing, soothing breaks built in. Newborn sessions happen in your home (lifestyle) or our studio. Milestone sessions capture those fleeting stages: the first smile, sitting unaided, the cake smash chaos. We provide props, outfits, and a relaxed environment.',
+    features: [
+      '2-3 hour newborn session (baby-led pacing)',
+      'Milestone sessions: 3, 6, 9, 12 months',
+      'Cake smash with custom backdrop',
+      'Props, wraps, outfits provided',
+      'Sibling & family portraits included',
+      '25+ fully edited images',
+      'Online gallery with download',
+      'Print release included',
+      'Heirloom album options',
+    ],
+    notIncluded: [
+      'Custom cake (bakery referral)',
+      'Studio rental for cake smash (included in studio sessions)',
+    ],
+    price: 'From £325',
+    popular: false,
+    addOns: [
+      { name: 'Milestone Package (3 sessions)', price: '£795 (save £180)' },
+      { name: 'First Year Album', price: 'From £245' },
+      { name: 'Newborn Video (60 sec)', price: '+£250' },
+    ],
+  },
+];
+
+const faq = [
+  {
+    q: 'How far in advance should I book?',
+    a: 'Weddings: 12-18 months recommended. Events/Portraits: 4-8 weeks. We occasionally have last-minute availability — always worth asking.',
+  },
+  {
+    q: 'Do you travel outside the UK?',
+    a: 'Yes! We\'ve shot destination weddings in Europe and beyond. Travel fees apply. Let\'s chat about your location.',
+  },
+  {
+    q: 'What\'s your turnaround time?',
+    a: 'Sneak peek: 24-48 hrs. Full gallery: 4-6 weeks (weddings), 2-3 weeks (events/portraits). Corporate headshots: 48 hrs.',
+  },
+  {
+    q: 'Do you provide raw/unedited files?',
+    a: 'No. We deliver only fully edited, curated images. Raw files are available as a paid add-on (£200).',
+  },
+  {
+    q: 'What if we need to reschedule?',
+    a: 'We\'re flexible. Deposits transfer to a new date (subject to availability). Full terms in our contract.',
+  },
+  {
+    q: 'Are you insured?',
+    a: 'Yes — public liability (£5M) and professional indemnity. Certificates available on request.',
+  },
+];
+---
+
+<section class="section bg-white" aria-labelledby="services-heading">
+  <div class="container-custom">
+    <div class="text-center mb-16">
+      <h1 id="services-heading" class="section-title">Services & Pricing</h1>
+      <p class="section-subtitle mx-auto">
+        Transparent packages with no hidden fees. All prices include editing, online delivery, and print release.
+        <br class="hidden sm:inline" /> VAT added at checkout.
+      </p>
+    </div>
+
+    <!-- Service Cards -->
+    <div class="space-y-16" role="list">
+      {services.map((service) => (
+        <article id={service.id} class="relative" role="listitem">
+          {service.popular && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+              <span class="bg-amber-500 text-white text-xs font-bold px-4 py-1 rounded-full shadow-lg">
+                Most Popular
+              </span>
+            </div>
+          )}
+
+          <div class="grid lg:grid-cols-3 gap-12 items-start">
+            <!-- Sidebar -->
+            <div class="lg:col-span-1 lg:sticky lg:top-24 space-y-6">
+              <!-- Icon & Price -->
+              <div class="bg-slate-50 rounded-2xl p-8 text-center">
+                <div class="w-20 h-20 rounded-2xl bg-slate-900 flex items-center justify-center mx-auto mb-6">
+                  <service.icon class="w-10 h-10 text-white" aria-hidden="true" />
+                </div>
+                <h2 class="text-2xl font-bold text-slate-900 mb-2">{service.title}</h2>
+                <p class="text-slate-600 mb-6">{service.description}</p>
+                <div class="border-t border-slate-200 pt-6 mb-6">
+                  <span class="text-4xl font-bold text-slate-900">{service.price}</span>
+                  <span class="text-slate-500 ml-1">+ VAT</span>
+                </div>
+                <a
+                  href={`/contact?service=${service.id}`}
+                  class="btn-primary w-full inline-flex justify-center"
+                >
+                  Enquire About {service.title}
+                </a>
+              </div>
+
+              <!-- Add-ons -->
+              <div class="bg-white border border-slate-200 rounded-2xl p-6">
+                <h3 class="font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                  <Sparkles class="w-5 h-5 text-amber-500" aria-hidden="true" />
+                  Popular Add-ons
+                </h3>
+                <ul class="space-y-3">
+                  {service.addOns.map((addon) => (
+                    <li class="flex justify-between text-sm">
+                      <span class="text-slate-600">{addon.name}</span>
+                      <span class="font-medium text-slate-900">{addon.price}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-8">
+              <div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">What\'s Included</h3>
+                <ul class="space-y-3">
+                  {service.features.map((feature) => (
+                    <li class="flex items-start gap-3 text-slate-600">
+                      <Check class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="border-t border-slate-200 pt-8">
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">Not Included (Available as Add-ons)</h3>
+                <ul class="space-y-3">
+                  {service.notIncluded.map((item) => (
+                    <li class="flex items-start gap-3 text-slate-600">
+                      <X class="w-5 h-5 text-slate-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- FAQ -->
+    <div class="mt-24">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle mx-auto">Quick answers. Can\'t find yours? <a href="/contact" class="text-amber-500 hover:underline">Ask us directly</a>.</p>
+      </div>
+      <div class="max-w-3xl mx-auto space-y-4">
+        {faq.map((item, i) => (
+          <details class="group bg-white border border-slate-200 rounded-xl p-6" open={i === 0}>
+            <summary class="flex items-center justify-between cursor-pointer list-none font-semibold text-slate-900">
+              {item.q}
+              <ChevronRight class="w-5 h-5 text-slate-400 group-open:rotate-90 transition-transform" aria-hidden="true" />
+            </summary>
+            <div class="mt-4 text-slate-600 leading-relaxed animate-slide-up">
+              {item.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

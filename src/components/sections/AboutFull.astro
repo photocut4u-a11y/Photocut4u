@@ -1,0 +1,232 @@
+---
+import { Camera, Video, Award, Heart, Star, MapPin, Clock, Users, Shield, Truck, Sparkles, Target } from 'lucide-react';
+
+const story = `
+Hi, I'm the face behind Photocut4u. What started as a passion for capturing fleeting moments has grown into a full-time pursuit of cinematic storytelling across the UK.
+
+Based in Slough, Berkshire, I've had the privilege of documenting over 150 events — from intimate church ceremonies to grand wedding celebrations, corporate conferences to newborn first days. Every client, every event, every story is different. And that's what makes this work meaningful.
+
+My approach is simple: <strong>be present, stay invisible, capture truth.</strong> The best photos and videos happen when you forget the camera is there. I use professional cinema cameras, fast primes, and natural light to create images that feel timeless — not trendy.
+
+When I'm not behind the camera, you'll find me testing new gear, editing late into the night with good coffee, or planning the next adventure with my family.
+`;
+
+const values = [
+  {
+    title: 'Story First',
+    description: 'Every event has a unique narrative. We find the emotional threads and weave them into a story you\'ll watch for generations.',
+    icon: Heart,
+  },
+  {
+    title: 'Cinematic Quality',
+    description: 'Broadcast-grade equipment, professional lighting, and cinema-style editing. Your memories deserve the big-screen treatment.',
+    icon: Camera,
+  },
+  {
+    title: 'Unobtrusive Presence',
+    description: 'We blend into your day. No awkward posing, no intrusive directions — just authentic moments captured naturally.',
+    icon: Users,
+  },
+  {
+    title: 'Reliable Delivery',
+    description: 'Clear timelines, secure backups, and consistent communication. You\'ll never wonder when you\'ll see your photos.',
+    icon: Award,
+  },
+];
+
+const gear = [
+  { name: 'Sony A7S III', type: 'Cinema Camera', detail: '4K 120fps, incredible low light' },
+  { name: 'Sony A7R V', type: 'Photo Camera', detail: '61MP, pixel-shift multi-shot' },
+  { name: 'Sony 24-70mm f/2.8 GM II', type: 'Lens', detail: 'Workhorse zoom, tack sharp' },
+  { name: 'Sony 85mm f/1.4 GM', type: 'Lens', detail: 'Portrait king, creamy bokeh' },
+  { name: 'Sony 16-35mm f/2.8 GM', type: 'Lens', detail: 'Wide for venues & groups' },
+  { name: 'DJI RS 3 Pro', type: 'Gimbal', detail: 'Smooth cinematic movement' },
+  { name: 'DJI Mavic 3 Pro', type: 'Drone', detail: 'Aerial perspectives (licensed)' },
+  { name: 'Aputure LS 600d Pro', type: 'Lighting', detail: 'Powerful, color-accurate' },
+  { name: 'Rode Wireless GO II', type: 'Audio', detail: 'Crystal clear wireless audio' },
+  { name: 'MacBook Pro M3 Max', type: 'Edit Station', detail: 'DaVinci Resolve + Lightroom' },
+];
+
+const testimonials = [
+  {
+    quote: "Photocut4u captured our wedding day perfectly. The highlight film brings tears every time we watch it. Professional, unobtrusive, and the quality is incredible.",
+    author: "Sarah & James",
+    event: "Wedding, June 2024",
+    rating: 5,
+  },
+  {
+    quote: "We've used Photocut4u for three corporate events now. Always on time, always delivers above expectations. The same-day social clips are a game changer for our marketing.",
+    author: "Marketing Director",
+    event: "TechConf 2024, April 2024",
+    rating: 5,
+  },
+  {
+    quote: "The newborn session was so relaxed — baby led the whole thing. The photos are exactly what we wanted: natural, timeless, not posed. We'll treasure them forever.",
+    author: "Emma & Tom",
+    event: "Newborn Session, Feb 2024",
+    rating: 5,
+  },
+  {
+    quote: "Our worship night live stream was flawless. They handled the multi-cam setup, audio, and streaming so our team could focus on the service. Highly recommend for churches.",
+    author: "Pastor David",
+    event: "JCNIC Worship Night, Monthly",
+    rating: 5,
+  },
+];
+
+const stats = [
+  { value: '150+', label: 'Events Captured', icon: Camera },
+  { value: '50+', label: 'Weddings Filmed', icon: Heart },
+  { value: '8+', label: 'Years Experience', icon: Clock },
+  { value: '100%', label: 'Client Satisfaction', icon: Star },
+];
+---
+
+<section class="section bg-white" aria-labelledby="about-heading">
+  <div class="container-custom">
+    <!-- Hero Section -->
+    <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+      <div>
+        <h1 id="about-heading" class="section-title">Your Story, <span class="text-amber-500">Our Lens</span></h1>
+        <div class="prose prose-slate max-w-none text-lg leading-relaxed">
+          {story}
+        </div>
+      </div>
+      <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-slate-100">
+        <img
+          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop&crop=face"
+          alt="Photographer at work"
+          class="w-full h-full object-cover"
+        />
+        <a
+          href="https://www.youtube.com/@photocut4u"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="absolute inset-0 flex items-center justify-center bg-slate-900/50 hover:bg-slate-900/70 transition-colors"
+          aria-label="Watch our showreel on YouTube"
+        >
+          <div class="w-24 h-24 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border-4 border-white/30 hover:border-white/50 transition-all">
+            <svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </a>
+        <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm px-4 py-3 rounded-xl shadow-lg flex items-center gap-2">
+          <MapPin class="w-5 h-5 text-amber-500" aria-hidden="true" />
+          <span class="font-medium text-slate-900">Slough, Berkshire, UK</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Values -->
+    <div class="mb-24">
+      <div class="text-center mb-12">
+        <h2 class="section-title">How We Work</h2>
+        <p class="section-subtitle mx-auto">Four principles that guide every project.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {values.map((value) => (
+          <div class="p-8 bg-slate-50 rounded-2xl hover:bg-slate-100 transition-colors group">
+            <div class="w-14 h-14 rounded-xl bg-slate-900 flex items-center justify-center mb-6 group-hover:bg-amber-500 transition-colors">
+              <value.icon class="w-7 h-7 text-white" aria-hidden="true" />
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">{value.title}</h3>
+            <p class="text-slate-600">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="mb-24">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {stats.map((stat) => (
+          <div class="text-center p-8 bg-slate-900 rounded-2xl text-white">
+            <div class="w-16 h-16 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4">
+              <stat.icon class="w-8 h-8 text-amber-400" aria-hidden="true" />
+            </div>
+            <div class="text-4xl lg:text-5xl font-bold mb-2">{stat.value}</div>
+            <div class="text-slate-300">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Gear -->
+    <div class="mb-24">
+      <div class="text-center mb-12">
+        <h2 class="section-title">Our Kit</h2>
+        <p class="section-subtitle mx-auto">Professional tools for professional results. We invest in the best so you don't have to compromise.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {gear.map((item) => (
+          <div class="p-6 bg-white border border-slate-200 rounded-xl hover:border-amber-300 hover:shadow-lg transition-all">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-10 h-10 rounded-lg bg-slate-900 flex items-center justify-center">
+                {item.type === 'Cinema Camera' || item.type === 'Photo Camera' ? (
+                  <Camera class="w-5 h-5 text-white" aria-hidden="true" />
+                ) : item.type === 'Lens' ? (
+                  <Video class="w-5 h-5 text-white" aria-hidden="true" />
+                ) : item.type === 'Gimbal' || item.type === 'Drone' ? (
+                  <Target class="w-5 h-5 text-white" aria-hidden="true" />
+                ) : item.type === 'Lighting' ? (
+                  <Sparkles class="w-5 h-5 text-white" aria-hidden="true" />
+                ) : (
+                  <Shield class="w-5 h-5 text-white" aria-hidden="true" />
+                )}
+              </div>
+              <div>
+                <p class="text-xs text-slate-500 uppercase tracking-wider">{item.type}</p>
+                <p class="font-semibold text-slate-900">{item.name}</p>
+              </div>
+            </div>
+            <p class="text-sm text-slate-600">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="mb-24">
+      <div class="text-center mb-12">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle mx-auto">Real stories from real people.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {testimonials.map((t) => (
+          <article class="p-8 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-lg transition-all border border-slate-100">
+            <div class="flex gap-1 mb-4">
+              {Array.from({ length: t.rating }).map((_, i) => (
+                <Star key={i} class="w-5 h-5 text-amber-400 fill-current" aria-hidden="true" />
+              ))}
+            </div>
+            <blockquote class="text-slate-600 leading-relaxed mb-6">"{t.quote}"</blockquote>
+            <footer>
+              <cite class="font-semibold text-slate-900 block">{t.author}</cite>
+              <p class="text-sm text-slate-500">{t.event}</p>
+            </footer>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <!-- Badges -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-8 bg-white border border-slate-200 rounded-2xl text-center">
+        <Shield class="w-12 h-12 text-amber-500 mx-auto mb-4" aria-hidden="true" />
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Fully Insured</h3>
+        <p class="text-slate-600">Public liability (£5M) & professional indemnity. Certificates on request.</p>
+      </div>
+      <div class="p-8 bg-white border border-slate-200 rounded-2xl text-center">
+        <Truck class="w-12 h-12 text-amber-500 mx-auto mb-4" aria-hidden="true" />
+        <h3 class="text-xl font-bold text-slate-900 mb-2">UK Wide</h3>
+        <p class="text-slate-600">Based in Slough, serving nationwide. No mileage fees within 50 miles.</p>
+      </div>
+      <div class="p-8 bg-white border border-slate-200 rounded-2xl text-center">
+        <Award class="w-12 h-12 text-amber-500 mx-auto mb-4" aria-hidden="true" />
+        <h3 class="text-xl font-bold text-slate-900 mb-2">Award Winning</h3>
+        <p class="text-slate-600">Recognized for cinematic storytelling & client service excellence.</p>
+      </div>
+    </div>
+  </div>
+</section>

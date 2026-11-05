@@ -1,0 +1,116 @@
+---
+import type { Props } from 'astro';
+
+interface SEOProps extends Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  author?: string;
+}
+
+const {
+  title = 'Photocut4u | Professional Photography & Videography Services',
+  description = 'Professional photography and videography for weddings, events, portraits, and corporate. Cinematic storytelling that preserves your memories forever. Based in UK, serving worldwide.',
+  image = '/assets/images/og-default.jpg',
+  url = 'https://photocut4u.co.uk',
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+  author = 'Photocut4u',
+} = Astro.props;
+
+const siteUrl = new URL(url, 'https://photocut4u.co.uk');
+const imageUrl = new URL(image, 'https://photocut4u.co.uk');
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="author" content={author} />
+<link rel="canonical" href={siteUrl} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={siteUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Photocut4u" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={siteUrl} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+
+<!-- Additional Meta Tags -->
+<meta name="theme-color" content="#1e293b" />
+<meta name="robots" content="index, follow" />
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Photocut4u',
+  description: description,
+  url: 'https://photocut4u.co.uk',
+  logo: 'https://photocut4u.co.uk/assets/images/logo.svg',
+  image: imageUrl.href,
+  telephone: '+44-XXX-XXXXXXX',
+  email: 'hello@photocut4u.co.uk',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Slough',
+    addressRegion: 'Berkshire',
+    addressCountry: 'GB',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 51.5105,
+    longitude: -0.5950,
+  },
+  priceRange: '££',
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    opens: '09:00',
+    closes: '18:00',
+  },
+  sameAs: [
+    'https://www.youtube.com/@photocut4u',
+    'https://www.instagram.com/photocut4u',
+    'https://www.facebook.com/photocut4u',
+  ],
+}, null, 2)} />
+</script>
+
+{type === 'article' && publishedTime && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description: description,
+    image: imageUrl.href,
+    datePublished: publishedTime,
+    dateModified: modifiedTime || publishedTime,
+    author: {
+      '@type': 'Person',
+      name: author,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Photocut4u',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://photocut4u.co.uk/assets/images/logo.svg',
+      },
+    },
+  }, null, 2)} />
+</script>
