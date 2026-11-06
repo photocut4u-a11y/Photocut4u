@@ -10,97 +10,176 @@
   --color-light: #d9d9d9;
   --color-muted: #767676;
   --color-white: #ffffff;
+  --font-lato: "Lato", "sans-serif";
+  --font-serif: "Merriweather", "serif";
 }
 
-@layer base {
-  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
-
-  html { scroll-behavior: smooth; }
-  body {
-    @apply text-[var(--color-text)] antialiased bg-white font-lato;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif text-base leading-tight text-[var(--color-text)];
-  }
-
-  .font-lato { font-family: "Lato", "sans-serif"; }
-  .font-serif { font-family: "Merriweather", "serif"; }
+html { scroll-behavior: smooth; }
+body {
+  @apply text-[var(--color-text)] antialiased bg-white;
+  font-family: var(--font-lato);
+}
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif text-base leading-tight text-[var(--color-text)];
 }
 
-@layer components {
-  .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
+.container-custom {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
 
-  .section {
-    @apply py-16 sm:py-24 lg:py-32;
-  }
+.section {
+  padding: 4rem 1rem;
+}
 
-  .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
-  }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  outline: none;
+  cursor: pointer;
+}
 
-  .btn-accent {
-    @apply btn bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-light)] focus:ring-[var(--color-primary)] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
-  }
+.btn-accent {
+  background-color: var(--color-primary);
+  color: white;
+}
+.btn-accent:hover {
+  background-color: var(--color-primary-light);
+}
+.btn-accent:focus {
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+.btn-accent:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
 
-  .btn-dark {
-    @apply btn bg-[var(--color-dark)] text-white hover:bg-[#2a2a2a] focus:ring-[var(--color-dark)];
-  }
+.btn-dark {
+  background-color: var(--color-dark);
+  color: white;
+}
+.btn-dark:hover {
+  background-color: var(--color-dark-shade);
+}
+.btn-dark:focus {
+  box-shadow: 0 0 0 2px var(--color-dark);
+}
 
-  .btn-light {
-    @apply btn bg-white text-slate-900 hover:bg-slate-100 focus:ring-white;
-  }
+.btn-light {
+  background-color: white;
+  color: #333;
+}
+.btn-light:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
 
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+@media (min-width: 640px) {
   .section-title {
-    @apply font-serif text-3xl sm:text-4xl lg:text-5xl text-white mb-4;
+    font-size: 2.25rem;
   }
+}
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 3rem;
+  }
+}
 
-  .section-subtitle {
-    @apply text-lg sm:text-xl text-[var(--color-text)] max-w-2xl mb-12;
-  }
+.section-subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text);
+  max-width: 56rem;
+  margin-bottom: 3rem;
+}
 
-  .card {
-    @apply bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-slate-100;
-  }
+.card {
+  background-color: white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow 0.3s;
+  border: 1px solid #f5f5f5;
+}
+.card:hover {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 
-  .card-dark {
-    @apply bg-[var(--color-dark)] rounded-xl overflow-hidden shadow-lg transition-shadow duration-300 border-transparent;
-  }
+.card-dark {
+  background-color: var(--color-dark);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border: none;
+}
+.card-dark .card-body {
+  padding: 2rem;
+  color: white;
+}
+.card-dark .card-body h3 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.card-dark .card-body p {
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+.card-dark .card-body .btn {
+  background-color: var(--color-primary);
+  color: white;
+}
+.card-dark .card-body .btn:hover {
+  background-color: var(--color-primary-light);
+}
 
-  .card-dark .card-body {
-    @apply p-8 text-white;
-  }
+.form-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-dark-sm);
+  border: 1px solid var(--color-light);
+  border-radius: 0.5rem;
+  color: white;
+  font-size: 1rem;
+}
+.form-field::placeholder {
+  color: var(--color-muted);
+}
+.form-field:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary);
+  border-color: var(--color-primary);
+}
 
-  .card-dark .card-body h3 {
-    @apply font-serif text-2xl mb-2;
-  }
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
 
-  .card-dark .card-body p {
-    @apply text-[var(--color-text)] mb-6;
-  }
-
-  .card-dark .card-body .btn {
-    @apply bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-light)];
-  }
-
-  .form-field {
-    @apply w-full px-4 py-3 bg-[var(--color-dark-sm)] border border-[var(--color-light)] rounded-lg text-white placeholder-[var(--color-muted)] focus:outline-none focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)];
-  }
-
-  .form-label {
-    @apply block text-sm font-medium text-[var(--color-text)] mb-1;
-  }
-
-  .section-header {
-    @apply bg-[var(--color-dark)] py-20 sm:py-28 px-4;
-  }
-
-  .section-header .section-title {
-    @apply text-white;
-  }
-
-  .section-header .section-subtitle {
-    @apply text-[var(--color-text)];
-  }
+.section-header {
+  background-color: var(--color-dark);
+  padding: 5rem 1rem 2.5rem 1rem;
+}
+.section-header .section-title {
+  color: white;
+}
+.section-header .section-subtitle {
+  color: var(--color-text);
 }
