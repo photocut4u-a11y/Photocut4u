@@ -5,17 +5,17 @@
       <stop offset="100%" stop-color="#D85A3A"/>
     </linearGradient>
   </defs>
-  <!-- Camera lens -->
-  <circle cx="55" cy="60" r="40" fill="#E76F51"/>
-  <circle cx="55" cy="60" r="40" fill="url(#p4u-grad)"/>
-  <circle cx="55" cy="60" r="28" fill="none" stroke="#fff" stroke-width="4"/>
-  <circle cx="55" cy="60" r="14" fill="#E76F51" stroke="#fff" stroke-width="3"/>
-  <circle cx="55" cy="60" r="6" fill="#1a1a1a"/>
-  <line x1="45" y1="60" x2="65" y2="60" stroke="#fff" stroke-width="2"/>
-  <line x1="55" y1="45" x2="55" y2="75" stroke="#fff" stroke-width="2"/>
-  <line x1="48" y1="48" x2="62" y2="72" stroke="#fff" stroke-width="1.5"/>
-  <line x1="62" y1="48" x2="48" y2="72" stroke="#fff" stroke-width="1.5"/>
-  <text x="55" y="118" text-anchor="middle" font-family="'Lato', 'sans-serif" font-size="28" font-weight="700" fill="#E76F51">P</text>
-  <text x="72" y="118" text-anchor="middle" font-family="'Lato', 'sans-serif" font-size="28" font-weight="700" fill="#ED947E">4</text>
-  <text x="88" y="118" text-anchor="middle" font-family="'Lato', 'sans-serif" font-size="28" font-weight="700" fill="#E76F51">U</text>
+  <!-- P4U text with camera shutter aperture integrated into center -->
+  <!-- P -->
+  <text x="40" y="75" text-anchor="middle" font-family="'Lato', 'sans-serif" font-size="38" font-weight="700" fill="url(#p4u-grad)">P</text>
+  <!-- 4 with camera aperture -->
+  <g transform="translate(55, 35) scale(0.85)">
+    <circle cx="40" cy="40" r="18" fill="none" stroke="#fff" stroke-width="3"/>
+    <circle cx="40" cy="40" r="5" fill="#fff"/>
+    <line x1="40" y1="28" x2="40" y2="52" stroke="#fff" stroke-width="2"/>
+    <line x1="28" y1="40" x2="52" y2="40" stroke="#fff" stroke-width="2"/>
+    <line x1="31" y1="31" x2="49" y2="49" stroke="#fff" stroke-width="1.5"/>
+    <line x1="49" y1="31" x2="31" y2="49" stroke="#fff" stroke-width="1.5"/>
+  </g>
+  <text x="72" y="75" text-anchor="middle" font-family="'Lato', 'sans-serif" font-size="38" font-weight="700" fill="url(#p4u-grad)">U</text>
 </svg>
