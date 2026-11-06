@@ -3,24 +3,18 @@ import { Play, Camera, Video, ArrowRight, Star, Heart, Award } from 'lucide-reac
 ---
 
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-50">
-  <!-- Background Video/Image Placeholder -->
+  <!-- Background image -->
   <div class="absolute inset-0 z-0">
-    <div class="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90" />
-    <!-- YouTube embed as background (muted, autoplay, loop) -->
-    <div class="absolute inset-0 opacity-30">
-      <iframe
-        src="https://www.youtube.com/embed/kqV0L7T8auc?autoplay=1&mute=1&loop=1&playlist=kqV0L7T8auc&controls=0&modestbranding=1&rel=0&showinfo=0"
-        title="Photocut4u Showreel"
-        class="w-full h-full pointer-events-none"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        loading="eager"
-      ></iframe>
-    </div>
+    <img
+      src="https://images.unsplash.com/photo-1515879218367-849dd1118c92?w=1920&q=80&fm=jpg"
+      alt=""
+      class="w-full h-full object-cover"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-900/45 via-slate-900/25 to-slate-900/85" aria-hidden="true" />
   </div>
 
-  <!-- Content -->
-  <div class="relative z-10 container-custom px-4 py-20">
+  <div class="relative z-10 container-custom px-4 py-16 sm:py-20">
     <div class="max-w-4xl mx-auto text-center">
       <!-- Badge -->
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-8 animate-fade-in">
@@ -28,20 +22,17 @@ import { Play, Camera, Video, ArrowRight, Star, Heart, Award } from 'lucide-reac
         <span>Now Booking 2025/2026</span>
       </div>
 
-      <!-- Headline -->
       <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6 animate-slide-up">
         We Capture Moments<br class="hidden sm:block" />
         <span class="text-amber-400">That Last Forever</span>
       </h1>
 
-      <!-- Subheadline -->
       <p class="text-lg sm:text-xl lg:text-2xl text-slate-200 max-w-3xl mx-auto mb-10 leading-relaxed animate-slide-up" style="animation-delay: 0.1s;">
         Professional photography & videography for weddings, events, portraits & corporate.
         Cinematic storytelling that preserves your memories for a lifetime.
       </p>
 
-      <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-slide-up" style="animation-delay: 0.2s;">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up" style="animation-delay: 0.2s;">
         <a href="/contact" class="btn-primary text-lg px-8 py-4 group">
           Get Your Free Quote
           <ArrowRight class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" aria-hidden="true" />
@@ -68,18 +59,27 @@ import { Play, Camera, Video, ArrowRight, Star, Heart, Award } from 'lucide-reac
         <div class="flex items-center gap-2">
           <Camera class="w-5 h-5 text-slate-400" aria-hidden="true" />
           <Video class="w-5 h-5 ml-1 text-slate-400" aria-hidden="true" />
-          <span>Photo & Video</span>
+          <span>Photo &amp; Video</span>
         </div>
-      </div>
-
-      <!-- Scroll Indicator -->
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <a href="#portfolio" class="text-slate-400 hover:text-white transition-colors" aria-label="Scroll to portfolio">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </a>
       </div>
     </div>
   </div>
+
+  <!-- Showreel play button -->
+  <a
+    href="https://www.youtube.com/@photocut4u"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="absolute bottom-8 right-8 z-20 flex items-center justify-center w-14 h-14 rounded-full bg-white/15 backdrop-blur-sm text-white border border-white/20 hover:bg-white/25 transition-all hover:scale-110"
+    aria-label="Watch our showreel on YouTube"
+  >
+    <Play class="w-7 h-7 ml-1" aria-hidden="true" />
+  </a>
+
+  <!-- Scroll indicator -->
+  <a href="#portfolio" class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm text-slate-400 hover:text-white hover:bg-white/20 transition-all border border-white/10" aria-label="Scroll to portfolio">
+    <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </a>
 </section>
