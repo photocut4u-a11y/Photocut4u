@@ -5,12 +5,8 @@ import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://photocut4u.co.uk',
-  integrations: [
-    react(),
-    sitemap(),
-    icon({ include: { lucide: ['camera', 'video', 'heart', 'star', 'mail', 'phone', 'map-pin', 'calendar', 'arrow-right', 'play', 'chevron-right', 'chevron-left', 'instagram', 'youtube', 'facebook', 'twitter'] } })
-  ],
+  site: 'https://photocut4u.tech',
+  integrations: [react(), sitemap(), icon()],
   vite: {
     plugins: [tailwindcss()],
   },
@@ -18,5 +14,5 @@ export default defineConfig({
   trailingSlash: 'always',
   build: {
     assets: 'assets',
-  }
+  },
 });

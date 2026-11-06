@@ -1,7 +1,4 @@
-# Astro will generate sitemap automatically via @astrojs/sitemap
-# This file tells search engines where they can/cannot crawl
-
 User-agent: *
 Allow: /
 
-Sitemap: https://photocut4u.co.uk/sitemap-index.xml
+Sitemap: https://photocut4u.tech/sitemap.xml
