@@ -1,71 +1,106 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #E76F51;
+  --color-primary-light: #ED947E;
+  --color-text: #a3a3a3;
+  --color-dark: #333333;
+  --color-dark-sm: #4D4D4D;
+  --color-dark-shade: #2a2a2a;
+  --color-light: #d9d9d9;
+  --color-muted: #767676;
+  --color-white: #ffffff;
+}
+
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+
+  html { scroll-behavior: smooth; }
   body {
-    @apply text-slate-900 antialiased bg-white;
+    @apply text-[var(--color-text)] antialiased bg-white font-lato;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-semibold tracking-tight;
+    @apply font-serif text-base leading-tight text-[var(--color-text)];
   }
+
+  .font-lato { font-family: "Lato", "sans-serif"; }
+  .font-serif { font-family: "Merriweather", "serif"; }
 }
 
 @layer components {
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
   .section {
     @apply py-16 sm:py-24 lg:py-32;
   }
+
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
   }
-  .btn-primary {
-    @apply btn bg-slate-900 text-white hover:bg-slate-700 focus:ring-slate-500;
-  }
-  .btn-secondary {
-    @apply btn bg-white text-slate-900 border-2 border-slate-900 hover:bg-slate-100 focus:ring-slate-500;
-  }
+
   .btn-accent {
-    @apply btn bg-amber-600 text-white hover:bg-amber-500 focus:ring-amber-400;
+    @apply btn bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-light)] focus:ring-[var(--color-primary)] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
   }
+
+  .btn-dark {
+    @apply btn bg-[var(--color-dark)] text-white hover:bg-[#2a2a2a] focus:ring-[var(--color-dark)];
+  }
+
+  .btn-light {
+    @apply btn bg-white text-slate-900 hover:bg-slate-100 focus:ring-white;
+  }
+
   .section-title {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4;
+    @apply font-serif text-3xl sm:text-4xl lg:text-5xl text-white mb-4;
   }
+
   .section-subtitle {
-    @apply text-lg sm:text-xl text-slate-600 max-w-2xl mb-12;
+    @apply text-lg sm:text-xl text-[var(--color-text)] max-w-2xl mb-12;
   }
+
   .card {
     @apply bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-slate-100;
   }
-  .input-field {
-    @apply w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent transition-all;
-  }
-  .label {
-    @apply block text-sm font-medium text-slate-700 mb-1;
-  }
-}
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .card-dark {
+    @apply bg-[var(--color-dark)] rounded-xl overflow-hidden shadow-lg transition-shadow duration-300 border-transparent;
   }
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-  .animate-slide-up {
-    animation: slideUp 0.6s ease-out forwards;
-  }
-}
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+  .card-dark .card-body {
+    @apply p-8 text-white;
+  }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  .card-dark .card-body h3 {
+    @apply font-serif text-2xl mb-2;
+  }
+
+  .card-dark .card-body p {
+    @apply text-[var(--color-text)] mb-6;
+  }
+
+  .card-dark .card-body .btn {
+    @apply bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-light)];
+  }
+
+  .form-field {
+    @apply w-full px-4 py-3 bg-[var(--color-dark-sm)] border border-[var(--color-light)] rounded-lg text-white placeholder-[var(--color-muted)] focus:outline-none focus:ring-[var(--color-primary)] focus:border-[var(--color-primary)];
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-[var(--color-text)] mb-1;
+  }
+
+  .section-header {
+    @apply bg-[var(--color-dark)] py-20 sm:py-28 px-4;
+  }
+
+  .section-header .section-title {
+    @apply text-white;
+  }
+
+  .section-header .section-subtitle {
+    @apply text-[var(--color-text)];
+  }
 }
