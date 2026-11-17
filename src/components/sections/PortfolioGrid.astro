@@ -128,7 +128,7 @@ const categories = ['All', 'Weddings', 'Events', 'Portraits', 'Corporate', 'Chur
           id={`tab-${cat.toLowerCase()}`}
           class={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
             i === 0
-              ? 'bg-slate-900 text-white shadow-lg'
+              ? 'bg-[var(--color-dark)] text-white shadow-lg'
               : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
           }`}
           data-category={cat.toLowerCase()}
@@ -226,12 +226,12 @@ const categories = ['All', 'Weddings', 'Events', 'Portraits', 'Corporate', 'Chur
         const category = tab.dataset.category;
 
         tabs.forEach(t => {
-          t.classList.remove('bg-slate-900', 'text-white', 'shadow-lg');
+          t.classList.remove('bg-[var(--color-dark)]', 'text-white', 'shadow-lg');
           t.classList.add('bg-slate-100', 'text-slate-600');
           t.setAttribute('aria-selected', 'false');
         });
         tab.classList.remove('bg-slate-100', 'text-slate-600');
-        tab.classList.add('bg-slate-900', 'text-white', 'shadow-lg');
+        tab.classList.add('bg-[var(--color-dark)]', 'text-white', 'shadow-lg');
         tab.setAttribute('aria-selected', 'true');
 
         cards.forEach(card => {

@@ -1,0 +1,8 @@
+name = "photocut4u-logo-uploader"
+main = "upload.js"
+compatibility_date = "2026-11-06"
+
+[vars]
+CLOUD_NAME = "kess7aei"
+API_KEY = "314447789673926"
+API_SECRET = "RQob-DUypf0lZgEWysMyQu3pzSM"

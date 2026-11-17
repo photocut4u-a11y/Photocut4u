@@ -2,7 +2,7 @@
 import { Play, Camera, Video, ArrowRight, Star, Heart, Award } from 'lucide-react';
 ---
 
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-50">
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
   <!-- Background image -->
   <div class="absolute inset-0 z-0">
     <img
@@ -14,11 +14,11 @@ import { Play, Camera, Video, ArrowRight, Star, Heart, Award } from 'lucide-reac
     <div class="absolute inset-0 bg-gradient-to-b from-slate-900/45 via-slate-900/25 to-slate-900/85" aria-hidden="true" />
   </div>
 
-  <div class="relative z-10 container-custom px-4 py-16 sm:py-20">
-    <div class="max-w-4xl mx-auto text-center">
+  <div class="relative z-10 container-custom px-4 py-16 sm:py-20 lg:py-28 lg:px-12">
+    <div class="max-w-4xl mx-auto text-center lg:max-w-5xl lg:px-8">
       <!-- Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-8 animate-fade-in">
-        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse" aria-hidden="true"></span>
+      <div class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-8 animate-fade-in">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse" aria-hidden="true"></span>
         <span>Now Booking 2025/2026</span>
       </div>
 
@@ -28,8 +28,7 @@ import { Play, Camera, Video, ArrowRight, Star, Heart, Award } from 'lucide-reac
       </h1>
 
       <p class="text-lg sm:text-xl lg:text-2xl text-slate-200 max-w-3xl mx-auto mb-10 leading-relaxed animate-slide-up" style="animation-delay: 0.1s;">
-        Professional photography & videography for weddings, events, portraits & corporate.
-        Cinematic storytelling that preserves your memories for a lifetime.
+        Professional photography & videography for weddings, events, portraits & corporate. Cinematic storytelling that preserves your memories for a lifetime.
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up" style="animation-delay: 0.2s;">
@@ -59,27 +58,27 @@ import { Play, Camera, Video, ArrowRight, Star, Heart, Award } from 'lucide-reac
         <div class="flex items-center gap-2">
           <Camera class="w-5 h-5 text-slate-400" aria-hidden="true" />
           <Video class="w-5 h-5 ml-1 text-slate-400" aria-hidden="true" />
-          <span>Photo &amp; Video</span>
+          <span>Photo & Video</span>
         </div>
       </div>
+
+      <!-- Showreel play button -->
+      <a
+        href="https://www.youtube.com/@photocut4u"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="absolute bottom-8 right-8 z-20 flex items-center justify-center w-14 h-14 rounded-full bg-white/15 backdrop-blur-sm text-white border border-white/20 hover:bg-white/25 transition-all hover:scale-110"
+        aria-label="Watch our showreel on YouTube"
+      >
+        <Play class="w-7 h-7 ml-1" aria-hidden="true" />
+      </a>
+
+      <!-- Scroll indicator -->
+      <a href="#portfolio" class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm text-slate-400 hover:text-white hover:bg-white/20 transition-all border border-white/10" aria-label="Scroll to portfolio">
+        <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
     </div>
   </div>
-
-  <!-- Showreel play button -->
-  <a
-    href="https://www.youtube.com/@photocut4u"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="absolute bottom-8 right-8 z-20 flex items-center justify-center w-14 h-14 rounded-full bg-white/15 backdrop-blur-sm text-white border border-white/20 hover:bg-white/25 transition-all hover:scale-110"
-    aria-label="Watch our showreel on YouTube"
-  >
-    <Play class="w-7 h-7 ml-1" aria-hidden="true" />
-  </a>
-
-  <!-- Scroll indicator -->
-  <a href="#portfolio" class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm text-slate-400 hover:text-white hover:bg-white/20 transition-all border border-white/10" aria-label="Scroll to portfolio">
-    <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-    </svg>
-  </a>
 </section>

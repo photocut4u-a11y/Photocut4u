@@ -2,16 +2,17 @@
 
 @theme {
   --color-primary: #E76F51;
-  --color-primary-light: #ED947E;
-  --color-text: #a3a3a3;
-  --color-dark: #333333;
-  --color-dark-sm: #4D4D4D;
-  --color-dark-shade: #2a2a2a;
-  --color-light: #d9d9d9;
-  --color-muted: #767676;
+  --color-primary-light: #F27A5F;
+  --color-primary-dark: #D64A3C;
+  --color-text: #71717a;
+  --color-dark: #09090b;
+  --color-dark-sm: #27272a;
+  --color-dark-shade: #18181b;
+  --color-light: #fafafa;
+  --color-muted: #a1a1aa;
   --color-white: #ffffff;
-  --font-lato: "Lato", "sans-serif";
-  --font-serif: "Merriweather", "serif";
+  --font-lato: "Inter", "system-ui", "sans-serif";
+  --font-serif: "Playfair Display", "serif";
 }
 
 html { scroll-behavior: smooth; }
@@ -20,28 +21,37 @@ body {
   font-family: var(--font-lato);
 }
 h1, h2, h3, h4, h5, h6 {
-  @apply font-serif text-base leading-tight text-[var(--color-text)];
+  @apply font-serif text-base leading-tight text-[var(--color-dark)];
 }
 
 .container-custom {
   max-width: 80rem;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 .section {
-  padding: 4rem 1rem;
+  padding: 5rem 1rem;
+}
+
+.section-dark {
+  background-color: var(--color-dark);
+}
+
+.section-light {
+  background-color: var(--color-light);
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
+  padding: 0.875rem 1.75rem;
   font-size: 1rem;
   font-weight: 500;
+  font-family: var(--font-lato);
   border-radius: 0.5rem;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
   outline: none;
   cursor: pointer;
 }
@@ -51,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 .btn-accent:hover {
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-dark);
 }
 .btn-accent:focus {
   box-shadow: 0 0 0 2px var(--color-primary);
@@ -66,61 +76,66 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
 }
 .btn-dark:hover {
-  background-color: var(--color-dark-shade);
+  background-color: var(--color-primary);
 }
 .btn-dark:focus {
   box-shadow: 0 0 0 2px var(--color-dark);
 }
 
-.btn-light {
-  background-color: white;
-  color: #333;
+.btn-outline {
+  border: 2px solid var(--color-dark-sm);
+  color: var(--color-dark-sm);
+  background: transparent;
 }
-.btn-light:hover {
-  background-color: #f5f5f5;
-  color: #333;
+.btn-outline:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
 }
 
 .section-title {
   font-family: var(--font-serif);
-  font-size: 1.875rem;
+  font-size: 2.25rem;
   font-weight: 700;
-  color: white;
-  margin-bottom: 1rem;
+  color: var(--color-dark);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
 }
 @media (min-width: 640px) {
-  .section-title {
-    font-size: 2.25rem;
-  }
-}
-@media (min-width: 1024px) {
   .section-title {
     font-size: 3rem;
   }
 }
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 4rem;
+  }
+}
 
 .section-subtitle {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--color-text);
-  max-width: 56rem;
+  max-width: 48rem;
   margin-bottom: 3rem;
+  line-height: 1.75;
 }
 
 .card {
   background-color: white;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  transition: box-shadow 0.3s;
-  border: 1px solid #f5f5f5;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  border: 1px solid #f4f4f5;
 }
 .card:hover {
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.04);
+  transform: translateY(-4px);
 }
 
 .card-dark {
   background-color: var(--color-dark);
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   border: none;
@@ -136,7 +151,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
 }
 .card-dark .card-body p {
-  color: var(--color-text);
+  color: var(--color-muted);
   margin-bottom: 1.5rem;
 }
 .card-dark .card-body .btn {
@@ -149,12 +164,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .form-field {
   width: 100%;
-  padding: 0.75rem 1rem;
-  background-color: var(--color-dark-sm);
-  border: 1px solid var(--color-light);
+  padding: 0.875rem 1rem;
+  background-color: var(--color-light);
+  border: 1px solid #e4e4e7;
   border-radius: 0.5rem;
-  color: white;
-  font-size: 1rem;
+  color: var(--color-dark-sm);
+  font-size: 0.95rem;
 }
 .form-field::placeholder {
   color: var(--color-muted);
@@ -175,11 +190,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-header {
   background-color: var(--color-dark);
-  padding: 5rem 1rem 2.5rem 1rem;
+  padding: 6rem 1.5rem 2.5rem 1rem;
+  text-align: center;
 }
 .section-header .section-title {
   color: white;
 }
 .section-header .section-subtitle {
-  color: var(--color-text);
+  color: #d4d4d8;
+  max-width: 48rem;
+  margin: 0 auto 3rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
