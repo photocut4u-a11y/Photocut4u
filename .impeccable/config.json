@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "instrument serif",
+        "files": [
+          "src/components/ui/Footer.astro"
+        ],
+        "createdAt": "2026-11-17T21:39:30.718Z",
+        "reason": "same deliberate serif choice; intentional brand identity"
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument sans",
+        "files": [
+          "src/components/ui/Footer.astro"
+        ],
+        "createdAt": "2026-11-17T21:39:30.726Z",
+        "reason": "deliberate brand body face paired with Instrument Serif; distinctive editorial sans, not on flagged list"
+      },
+      {
+        "rule": "overused-font",
+        "value": "instrument sans",
+        "files": [
+          "src/layouts/BaseLayout.astro"
+        ],
+        "createdAt": "2026-11-17T21:39:30.738Z",
+        "reason": "same deliberate sans choice loaded via Google Fonts in BaseLayout; intentional"
+      }
+    ]
+  }
+}
