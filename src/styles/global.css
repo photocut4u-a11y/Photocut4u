@@ -11,8 +11,8 @@
   --color-light: #fafafa;
   --color-muted: #a1a1aa;
   --color-white: #ffffff;
-  --font-lato: "Inter", "system-ui", "sans-serif";
-  --font-serif: "Playfair Display", "serif";
+  --font-lato: "Instrument Sans", "system-ui", "sans-serif";
+  --font-serif: "Instrument Serif", "serif";
 }
 
 html { scroll-behavior: smooth; }
